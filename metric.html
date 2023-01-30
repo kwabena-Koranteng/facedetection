@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metric App</title>
+</head>
+<body>
+
+    <script type="text/javascript" src="https://sdk.dev.metric.africa/v1"></script>
+    <script>
+        const metric = new window.Metric({
+            client_id: "MIX2EaddjT7dNwZCBZFB",
+            client_secret: "gJgFKRJfEpMsvgPR6OSTJmHeOIYtW1WfUscbJ1x4YJ5m4"
+        });
+
+        metric.verify(
+            "ghana_card",
+            {
+                card_number: "GHA-725540017-9",
+                reference_id: "AR1892764",
+                purpose: "Testing",
+                phone_number: "0205791875"
+            },
+            (response) => {
+                console.log(response);
+            }
+        )
+    </script>
+
+</body>
+</html>
